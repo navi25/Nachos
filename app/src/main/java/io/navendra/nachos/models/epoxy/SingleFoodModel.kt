@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.singlefood_layout.view.*
 abstract class SingleFoodModel : EpoxyModelWithHolder<SingleFoodModel.FoodHolder>(){
 
     @EpoxyAttribute
-    var id:Long = 0
+    var id : Long = 0
 
     @EpoxyAttribute
     @DrawableRes

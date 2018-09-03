@@ -5,11 +5,12 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import io.navendra.nachos.R
-import kotlinx.android.synthetic.main.activity_main.*
+import io.navendra.nachos.viewmodels.SingleFoodController
 
 class MainActivity : AppCompatActivity() {
 
-    private val recyclerView : RecyclerView by lazy { recycler_view }
+    private val recyclerView : RecyclerView by lazy { findViewById<RecyclerView>(R.id.recycler_view) }
+    private val singleFoodController : SingleFoodController by lazy { SingleFoodController() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +23,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.apply {
             layoutManager = linearLayoutManager
             setHasFixedSize(true)
-
+            adapter = singleFoodController.adapter
         }
+
+        //This statement builds model and add it to the recycler view
+        singleFoodController.requestModelBuild()
     }
 }
