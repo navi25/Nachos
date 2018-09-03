@@ -10,7 +10,7 @@ class SingleFoodController : EpoxyController(){
     var foodItems : List<Food>
 
     init {
-        foodItems = FoodDataFactory.getFoodItems(10)
+        foodItems = FoodDataFactory.getFoodItems(50)
     }
 
     override fun buildModels() {
@@ -21,7 +21,6 @@ class SingleFoodController : EpoxyController(){
                     .id(i++)
                     .image(food.image)
                     .title(food.title)
-                    .desc(food.description)
                     .addTo(this)
         }
     }

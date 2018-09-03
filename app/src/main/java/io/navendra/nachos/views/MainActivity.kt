@@ -2,6 +2,8 @@ package io.navendra.nachos.views
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import io.navendra.nachos.R
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
             layoutManager = linearLayoutManager
             setHasFixedSize(true)
             adapter = singleFoodController.adapter
+            addItemDecoration(DividerItemDecoration(this@MainActivity, linearLayoutManager.orientation))
         }
 
         //This statement builds model and add it to the recycler view

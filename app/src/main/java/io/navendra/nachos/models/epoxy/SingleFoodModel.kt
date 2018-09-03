@@ -36,7 +36,7 @@ abstract class SingleFoodModel : EpoxyModelWithHolder<SingleFoodModel.FoodHolder
 
     override fun bind(holder: FoodHolder?) {
         holder!!.imageView.setImageResource(image)
-        holder.descView.text = desc
+//        holder.descView.text = desc
         holder.titleView.text = title
     }
 

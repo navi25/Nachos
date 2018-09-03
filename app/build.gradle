@@ -30,7 +30,7 @@ kapt {
 }
 
 dependencies {
-    ext.epoxyVersion = '2.8.0'
+    ext.epoxyVersion = '2.0.0'
     ext.androidSupportVersion = '27.1.1'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
