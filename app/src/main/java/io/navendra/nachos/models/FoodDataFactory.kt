@@ -42,4 +42,17 @@ object FoodDataFactory{
     }
 
 
+    fun getMultiFoodItems(count: Int) : List<MultiFood>{
+        var multiFoodItems = mutableListOf<MultiFood>()
+        repeat(count){
+            val image = randomPicture()
+            val title = randomTitle()
+            val foods = getFoodItems(20)
+            multiFoodItems.add(MultiFood(image,title,"",foods))
+        }
+
+        return multiFoodItems
+    }
+
+
 }
