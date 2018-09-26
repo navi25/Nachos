@@ -35,9 +35,9 @@ abstract class SingleFoodModel : EpoxyModelWithHolder<SingleFoodModel.FoodHolder
 
 
     override fun bind(holder: FoodHolder?) {
-        holder!!.imageView.setImageResource(image)
-        holder.descView.text = desc
-        holder.titleView.text = title
+        holder?.imageView?.setImageResource(image)
+        holder?.descView?.text = desc
+        holder?.titleView?.text = title
     }
 
 
@@ -46,14 +46,14 @@ abstract class SingleFoodModel : EpoxyModelWithHolder<SingleFoodModel.FoodHolder
      */
     inner class FoodHolder : EpoxyHolder(){
 
-        lateinit var imageView:ImageView
-        lateinit var titleView: TextView
-        lateinit var descView:TextView
+         var imageView:ImageView? =null
+         var titleView: TextView? =null
+         var descView:TextView? = null
 
         override fun bindView(itemView: View?) {
-            imageView = itemView!!.image
-            titleView = itemView.title
-            descView = itemView.desc
+            imageView = itemView?.image
+            titleView = itemView?.title
+            descView = itemView?.desc
         }
 
     }

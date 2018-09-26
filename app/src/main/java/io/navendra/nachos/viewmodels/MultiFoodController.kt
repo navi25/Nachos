@@ -12,6 +12,7 @@ class MultiFoodController : EpoxyController(){
 
     var multiFoodItems : List<MultiFood>
 
+
     init {
         multiFoodItems = FoodDataFactory.getMultiFoodItems(10)
     }
@@ -25,7 +26,7 @@ class MultiFoodController : EpoxyController(){
                     .image(food.image)
                     .title(food.title)
                     .desc(food.description)
-                    .foods(food.foods)
+//                    .foods(food.foods)
                     .addTo(this)
         }
     }

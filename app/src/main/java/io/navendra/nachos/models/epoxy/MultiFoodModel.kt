@@ -33,13 +33,13 @@ abstract class MultiFoodModel : EpoxyModelWithHolder<MultiFoodModel.ViewHolder>(
     var foods:List<Food> = mutableListOf()
 
     override fun bind(holder: ViewHolder?) {
-        holder!!.imageView.setImageResource(image)
-        holder.titleView.text = title
+        holder?.imageView?.setImageResource(image)
+        holder?.titleView?.text = title
 
         val singleFoodController = SingleFoodController()
 
-        holder.recyclerView.apply {
-            layoutManager = LinearLayoutManager(holder.recyclerView.context,
+        holder?.recyclerView?.apply {
+            layoutManager = LinearLayoutManager(holder.recyclerView?.context,
                     LinearLayout.HORIZONTAL,false)
 
             adapter = singleFoodController.adapter
@@ -48,16 +48,16 @@ abstract class MultiFoodModel : EpoxyModelWithHolder<MultiFoodModel.ViewHolder>(
     }
 
     inner class ViewHolder : EpoxyHolder(){
-        lateinit var imageView: ImageView
-        lateinit var titleView: TextView
-        lateinit var descView: TextView
-        lateinit var recyclerView : RecyclerView
+         var imageView: ImageView? = null
+         var titleView: TextView? = null
+         var descView: TextView? = null
+         var recyclerView : RecyclerView? = null
 
         override fun bindView(itemView: View?) {
-            imageView = itemView!!.image
-            titleView = itemView.title
-            descView = itemView.desc
-            recyclerView = itemView.rv
+            imageView = itemView?.image
+            titleView = itemView?.title
+            descView = itemView?.desc
+            recyclerView = itemView?.rv
         }
 
     }

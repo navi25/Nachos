@@ -48,7 +48,7 @@ object FoodDataFactory{
             val image = randomPicture()
             val title = randomTitle()
             val foods = getFoodItems(20)
-            multiFoodItems.add(MultiFood(image,title,"",foods))
+            multiFoodItems.add(MultiFood(image,title,""))
         }
 
         return multiFoodItems
