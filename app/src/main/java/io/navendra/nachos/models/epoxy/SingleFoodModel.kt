@@ -9,7 +9,7 @@ import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import io.navendra.nachos.R
-import kotlinx.android.synthetic.main.singlefood_layout.view.*
+import io.navendra.nachos.models.Food
 
 /**
  * This class needs to be abstract as Epoxy inherits this class to form SingleFoodModel_() class.
@@ -18,44 +18,28 @@ import kotlinx.android.synthetic.main.singlefood_layout.view.*
  * https://github.com/airbnb/epoxy/wiki/Epoxy-Models
  */
 @EpoxyModelClass(layout = R.layout.singlefood_layout)
-abstract class SingleFoodModel : EpoxyModelWithHolder<SingleFoodModel.FoodHolder>(){
-
-    @EpoxyAttribute
-    var id : Long = 0
-
-    @EpoxyAttribute
-    @DrawableRes
-    var image : Int = 0
-
-    @EpoxyAttribute
-    var title:String? = ""
-
-    @EpoxyAttribute
-    var desc:String = ""
+abstract class SingleFoodModel (@EpoxyAttribute var food: Food) : EpoxyModelWithHolder<SingleFoodModel.FoodHolder>(){
 
 
-    override fun bind(holder: FoodHolder?) {
-        holder?.imageView?.setImageResource(image)
-        holder?.descView?.text = desc
-        holder?.titleView?.text = title
+    override fun bind(holder: FoodHolder) {
+        holder.imageView.setImageResource(food.image)
+        holder.titleView.text = food.title
+
     }
-
 
     /**
      * This is ViewHolder class equivalent to Google's RecyclerView.ViewHolder class
      */
-    inner class FoodHolder : EpoxyHolder(){
 
-         var imageView:ImageView? =null
-         var titleView: TextView? =null
-         var descView:TextView? = null
+    inner class FoodHolder : KotlinHolder(){
 
-        override fun bindView(itemView: View?) {
-            imageView = itemView?.image
-            titleView = itemView?.title
-            descView = itemView?.desc
-        }
+        val imageView by bind<ImageView>(R.id.image)
+        val titleView by bind<TextView>(R.id.title)
+        val descView by bind<TextView>(R.id.desc)
+
 
     }
 
 }
+
+

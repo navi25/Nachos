@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Nachos</string>
+    <string name="nachosDesc">
+        Nachos is a dish from northern Mexico that
+        consists of tortilla chips covered with mince and cheese.
+    </string>
 </resources>

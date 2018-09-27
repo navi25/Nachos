@@ -1,5 +1,6 @@
 package io.navendra.nachos.models
 
+import android.support.annotation.StringRes
 import io.navendra.nachos.R
 import java.util.*
 
@@ -36,7 +37,8 @@ object FoodDataFactory{
         repeat(count){
             val image = randomPicture()
             val title = randomTitle()
-            foodItems.add(Food(image,title))
+            @StringRes val desc = R.string.nachosDesc
+            foodItems.add(Food(image,title,desc))
         }
         return foodItems
     }
