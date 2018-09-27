@@ -7,22 +7,14 @@ import io.navendra.nachos.models.epoxy.SingleFoodModel_
 
 class SingleFoodController : EpoxyController(){
 
-    var foodItems : List<Food>
+    private val foodItems : List<Food> = FoodDataFactory.getFoodItems(50)
 
-    init {
-        foodItems = FoodDataFactory.getFoodItems(50)
-    }
+    private var index = 0L
 
-    override fun buildModels() {
-        var i:Long =0
-
-        foodItems.forEach {food ->
-            SingleFoodModel_()
-                    .id(i++)
-                    .image(food.image)
-                    .title(food.title)
-                    .addTo(this)
-        }
+    override fun buildModels() = foodItems.forEach{
+        SingleFoodModel_(it)
+                .id(index++)
+                .addTo(this)
     }
 
 }
