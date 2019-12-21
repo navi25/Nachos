@@ -1,6 +1,6 @@
 package io.navendra.nachos.models
 
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 import io.navendra.nachos.R
 import java.util.*
 

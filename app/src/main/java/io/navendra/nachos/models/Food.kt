@@ -1,6 +1,6 @@
 package io.navendra.nachos.models
 
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 
 data class Food (
         val image:Int=-1,
